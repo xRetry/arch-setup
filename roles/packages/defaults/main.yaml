@@ -1,0 +1,20 @@
+---
+
+packages_utils:
+  - alacritty
+  - chromium
+  - git
+  - unzip
+  - nnn
+  - neovim
+  - zathura
+  - zathura-pdf-mupdf
+  - ttf-hack
+
+packages_dev:
+  - python
+  - python-pip
+  - gcc
+  - npm
+  - julia
+  - docker

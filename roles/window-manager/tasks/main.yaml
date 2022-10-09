@@ -1,0 +1,54 @@
+---
+
+- name: Install Xorg
+  pacman:
+    name: "{{ packages_xorg }}"
+    state: present
+  become: yes
+  become_user: root
+
+- name: Install window manager
+  pacman:
+    name: "{{ packages_wm }}"
+    state: present
+  become: yes
+  become_user: root
+
+- name: Copy .xinitrc to destination
+  copy:
+    src: files/.xinitrc
+    dest: ~/.xinitrc
+    force: no
+
+- name: Copy .xprofile to destination
+  copy:
+    src: files/.xprofile
+    dest: ~/.xprofile
+    force: no
+
+- name: Check if ~/.config/qtile is a git repo
+  stat:
+    path: ~/.config/qtile/.git
+  register: git_file
+
+- name: Delete ~/.config/qtile when no git repo
+  file:
+    state: absent
+    path: ~/.config/qtile
+  when: not git_file.stat.exists
+
+- name: Clone qtile config repository
+  git:
+    repo: 'https://github.com/xRetry/qtile.git'
+    dest: ~/.config/qtile
+  when: not git_file.stat.exists
+
+- name: Install psutil for qtile
+  command: pip install psutil
+
+- name: Set autostart for Xserver
+  lineinfile:
+    path: ~/.bash_profile
+    search_string: startx
+    line: '[ -z "$DISPLAY" ] && [ $XDG_VTNR -eq 1 ] && startx'
+

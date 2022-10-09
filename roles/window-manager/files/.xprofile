@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# sourced at boot by ~/.xinitrc and most display managers
+
+# xdg standard configuration location (needed by some applications)
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# add ~/.local/bin to the PATH (application executables)
+export PATH = "$HOME/.local/bin:$PATH"
+
+# set display timeout, sleep, and power off times
+xset dpms 600 900 1200
+
+# set english keyboard with altgr and no deadkeys
+setxkbmap -layout us -variant altgr-intl
+
+# set keyboard repeat rate
+xset r rate 250 30

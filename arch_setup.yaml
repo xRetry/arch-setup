@@ -1,0 +1,11 @@
+---
+
+- name: Setting up arch machine 
+  hosts: localhost
+  connection: local
+  become: yes
+  become_user: marco
+  roles:
+    - window-manager
+    - { role: packages, become: yes, become_user: root}
+    - config
