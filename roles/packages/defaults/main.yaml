@@ -5,6 +5,11 @@ packages_utils:
   - chromium
   - git
   - unzip
+  - curl
+  - wget
+  - tar
+  - gzip
+  - nm-connection-editor
   - nnn
   - neovim
   - zathura
