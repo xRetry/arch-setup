@@ -23,3 +23,5 @@ packages_dev:
   - npm
   - julia
   - docker
+  - texlive-core
+  - texlive-latexextra
