@@ -19,3 +19,9 @@
     path: ~/.bashrc
     search_string: 'set -o vi'
     line: 'set -o vi'
+
+- name: Add ll alias
+  lineinfile:
+    path: ~/.bashrc
+    search_string: 'ls -la'
+    line: "alias ll='ls -la'"
