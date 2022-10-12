@@ -8,5 +8,6 @@ packages_xorg:
   - xorg-xinit
 
 packages_wm:
+  - python
   - qtile
   - python-pip
