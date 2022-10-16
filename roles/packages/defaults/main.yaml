@@ -15,6 +15,7 @@ packages_utils:
   - zathura
   - zathura-pdf-mupdf
   - ttf-hack
+  - arandr
 
 packages_dev:
   - python
