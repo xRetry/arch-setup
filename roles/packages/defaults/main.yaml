@@ -19,6 +19,7 @@ packages_utils:
 packages_dev:
   - python
   - python-pip
+  - python-setuptools
   - gcc
   - npm
   - julia

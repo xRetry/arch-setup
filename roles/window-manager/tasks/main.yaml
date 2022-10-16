@@ -43,9 +43,6 @@
     dest: ~/.config/qtile
   when: not git_file.stat.exists
 
-- name: Install setuptools for python
-  command: pip install setuptools
-
 - name: Install psutil for qtile
   pip:
     name: psutil

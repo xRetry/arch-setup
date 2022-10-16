@@ -11,3 +11,4 @@ packages_wm:
   - python
   - qtile
   - python-pip
+  - python-setuptools
