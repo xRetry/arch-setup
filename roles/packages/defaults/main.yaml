@@ -4,6 +4,7 @@ packages_utils:
   - alacritty
   - chromium
   - git
+  - zip
   - unzip
   - curl
   - wget
