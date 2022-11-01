@@ -1,6 +1,7 @@
 ---
 
 packages_utils:
+  - sudo
   - alacritty
   - chromium
   - git
