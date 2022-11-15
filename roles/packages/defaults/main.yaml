@@ -3,7 +3,7 @@
 packages_utils:
   - sudo
   - alacritty
-  - chromium
+  - firefox
   - git
   - zip
   - unzip
