@@ -19,6 +19,8 @@ packages_utils:
   - ttf-hack
   - arandr
   - sxiv
+  - pulseaudio
+  - pavucontrol
 
 packages_dev:
   - python

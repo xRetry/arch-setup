@@ -1,0 +1,26 @@
+---
+
+- name: Add ll alias
+  lineinfile:
+    path: ~/.bashrc
+    search_string: 'ls -la'
+    line: "alias ll='ls -la'"
+
+- name: Add network config alias
+  lineinfile:
+    path: ~/.bashrc
+    search_string: 'alias config-network'
+    line: "alias config-network='nm-connection-editor &'"
+
+- name: Add audio config alias
+  lineinfile:
+    path: ~/.bashrc
+    search_string: 'alias config-audio'
+    line: "alias config-audio='pavucontrol &'"
+
+- name: Add university vpn to alias
+  lineinfile:
+    path: ~/.bashrc
+    search_string: 'alias mul-vpn'
+    line: alias mul-vpn="printf '1\nm01602279\nTrownnek\n' | sudo openconnect mulvpn.unileoben.ac.at"
+

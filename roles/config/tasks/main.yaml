@@ -41,14 +41,6 @@
     search_string: 'set -o vi'
     line: 'set -o vi'
 
-- name: Add ll alias
-  lineinfile:
-    path: ~/.bashrc
-    search_string: 'ls -la'
-    line: "alias ll='ls -la'"
-
-- name: Add network config alias
-  lineinfile:
-    path: ~/.bashrc
-    search_string: 'alias config-network'
-    line: "alias config-network='nm-connection-editor &'"
+- name: Set up aliases
+  include_tasks:
+    file: alias.yml
