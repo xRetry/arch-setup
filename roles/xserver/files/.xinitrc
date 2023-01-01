@@ -14,5 +14,3 @@ fi
 [ -r ~/.Xresources ] && xrdb -merge ~/.Xresources
 [ -r ~/.xprofile ] && . ~/.xprofile
 
-# launch the session, commands below this line will be ignored
-exec qtile start

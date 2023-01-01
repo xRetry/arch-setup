@@ -1,30 +1,11 @@
 ---
 
-- name: Install Xorg
-  pacman:
-    name: "{{ packages_xorg }}"
-    state: present
-  become: yes
-  become_user: root
-
 - name: Install window manager
   pacman:
     name: "{{ packages_wm }}"
     state: present
   become: yes
   become_user: root
-
-- name: Copy .xinitrc to destination
-  copy:
-    src: files/.xinitrc
-    dest: ~/.xinitrc
-    force: no
-
-- name: Copy .xprofile to destination
-  copy:
-    src: files/.xprofile
-    dest: ~/.xprofile
-    force: no
 
 - name: Check if ~/.config/qtile is a git repo
   stat:
@@ -47,9 +28,9 @@
   pip:
     name: psutil
 
-- name: Set autostart for Xserver
+- name: Set autostart for qtile
   lineinfile:
-    path: ~/.bash_profile
-    search_string: startx
-    line: '[ -z "$DISPLAY" ] && [ $XDG_VTNR -eq 1 ] && startx'
+    path: ~/.xinitrc
+    search_string: exec qtile start
+    line: exec qtile start
 

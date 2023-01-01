@@ -1,0 +1,17 @@
+#!/bin/sh
+# THIS FILE IS MANAGED BY ANSIBLE
+# CHANGES WILL BE OVERWRITTEN
+#
+# Sourced at boot by ~/.xinitrc and most display managers
+
+# Set display timeout, sleep, and power off times
+xset dpms 600 900 1200
+
+# Set english keyboard with altgr and no deadkeys
+setxkbmap -layout us -variant altgr-intl
+
+# Set keyboard repeat rate
+xset r rate 250 30
+
+# Set correct screen placement
+[[ $CONFIG_ID -eq 2 ]] && xrandr --output DP-4 --left-of DVI-I-1

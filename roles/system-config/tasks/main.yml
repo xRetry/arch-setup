@@ -14,3 +14,17 @@
     search_string: 'set -o vi'
     line: 'set -o vi'
 
+- name: Create npm folder in .config
+  file: 
+   path: "~/.config/npm"
+   recurse: yes
+   state: directory
+
+- name: Copy config files to destination
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  loop:
+    - { src: "files/npmrc", dest: "~/.config/npm/npmrc" }
+    - { src: "files/.bash_profile", dest: "~/.bash_profile" }
+

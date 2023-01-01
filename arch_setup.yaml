@@ -8,4 +8,5 @@
   roles:
     - system-config
     - { role: packages, become: yes, become_user: root}
+    - xserver
     - window-manager

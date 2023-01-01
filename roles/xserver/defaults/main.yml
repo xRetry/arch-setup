@@ -1,0 +1,9 @@
+packages_xorg:
+  - xorg-server
+  - xorg-xrandr
+  - xorg-xmodmap
+  - xorg-xset
+  - xorg-xrdb
+  - xorg-xprop
+  - xorg-xinit
+
