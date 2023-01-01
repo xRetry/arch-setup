@@ -1,0 +1,16 @@
+---
+
+- name: Configure sudoers file
+  lineinfile:
+    path: /etc/sudoers
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  loop:
+    - { regexp: '%wheel\s*ALL=(ALL:ALL)\*NOPASSWD', line: '%wheel ALL=(ALL:ALL) NOPASSWD: REBOOT' }
+    - { regexp: 'Cmnd_Alias\s*REBOOT', line: 'Cmnd_Alias    REBOOT = /sbin/halt, /sbin/reboot, /sbin/poweroff' }
+
+- name: Add marco to wheel group
+  user:
+    name: marco
+    groups: wheel
+    append: yes

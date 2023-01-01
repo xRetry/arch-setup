@@ -6,6 +6,6 @@
   become: yes
   become_user: marco
   roles:
-    - window-manager
+    - system-config
     - { role: packages, become: yes, become_user: root}
-    - config
+    - window-manager

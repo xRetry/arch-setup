@@ -1,13 +1,7 @@
-- name: Update pacman cache
-  pacman:
-    update_cache: true
+---
 
-- name: Install util packages
-  pacman:
-    name: "{{ packages_utils }}"
-    state: present
+- name: Installing packages
+  import_tasks: install.yml
 
-- name: Install development packages
-  pacman:
-    name: "{{ packages_dev }}"
-    state: present
+- name: Configure packages
+  import_tasks: config.yml

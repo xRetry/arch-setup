@@ -1,0 +1,17 @@
+---
+
+- name: Update pacman cache
+  pacman:
+    update_cache: true
+
+- name: Install util packages
+  pacman:
+    name: "{{ packages_utils }}"
+    state: present
+
+- name: Install development packages
+  pacman:
+    name: "{{ packages_dev }}"
+    state: present
+
+    
