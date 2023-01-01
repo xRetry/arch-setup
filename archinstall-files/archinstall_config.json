@@ -1,0 +1,8 @@
+{
+    "bootloader": "grub-install",
+    "hostname": "arch",
+    "kernels": ["linux-lts"],
+    "keyboard-language": "us",
+    "packages": ["ansible", "git"],
+    "timezone": "Europe/Vienna",
+}
