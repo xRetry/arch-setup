@@ -7,6 +7,6 @@
   become_user: marco
   roles:
     - system-config
-    - { role: packages, become: yes, become_user: root}
+    - packages
     - xserver
     - window-manager
