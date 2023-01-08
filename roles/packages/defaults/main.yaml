@@ -2,7 +2,7 @@
 
 packages_utils:
   - sudo
-  - man
+  - man-db
   - vim
   - alacritty
   - firefox
