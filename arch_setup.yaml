@@ -10,3 +10,5 @@
     - packages
     - xserver
     - window-manager
+  vars:
+    config_id: 2

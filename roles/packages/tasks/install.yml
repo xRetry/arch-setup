@@ -3,8 +3,6 @@
 - name: Update pacman cache
   pacman:
     update_cache: true
-  become: yes
-  become_user: root
 
 - name: Install util packages
   pacman:

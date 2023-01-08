@@ -1,18 +1,12 @@
 ---
 
+- name: Use vault file
+  include_vars:
+    file: sensitive.yml
+
 - name: Configure user
   import_tasks: user_setup.yml
   become_user: root
-
-- name: Set up aliases
-  include_tasks:
-    file: alias.yml
-  
-- name: Set vi mode for bash
-  lineinfile:
-    path: ~/.bashrc
-    search_string: 'set -o vi'
-    line: 'set -o vi'
 
 - name: Create npm folder in .config
   file: 
@@ -26,5 +20,11 @@
     dest: "{{ item.dest }}"
   loop:
     - { src: "files/npmrc", dest: "~/.config/npm/npmrc" }
-    - { src: "files/.bash_profile", dest: "~/.bash_profile" }
 
+- name: Copy config templates to destination
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  loop:
+    - { src: ".bash_profile.j2", dest: "~/.bash_profile" }
+    - { src: ".bashrc.j2", dest: "~/.bashrc" }

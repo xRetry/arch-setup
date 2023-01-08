@@ -2,6 +2,10 @@
 
 - name: Installing packages
   import_tasks: install.yml
+  become: yes
+  become_user: root
 
 - name: Configure packages
   import_tasks: config.yml
+  become: yes
+  become_user: marco

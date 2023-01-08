@@ -2,6 +2,7 @@
 
 packages_utils:
   - sudo
+  - vim
   - alacritty
   - firefox
   - git
@@ -16,7 +17,7 @@ packages_utils:
   - neovim
   - zathura
   - zathura-pdf-mupdf
-  - ttf-hack
+  - ttf-hack-nerd
   - arandr
   - sxiv
   - alsa-utils

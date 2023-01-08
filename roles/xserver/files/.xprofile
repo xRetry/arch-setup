@@ -14,4 +14,4 @@ setxkbmap -layout us -variant altgr-intl
 xset r rate 250 30
 
 # Set correct screen placement
-[[ $CONFIG_ID -eq 2 ]] && xrandr --output DP-4 --left-of DVI-I-1
+[[ $CONFIG_ID -eq 2 ]] && xrandr --output DP-3 --left-of DVI-I-1 && xrandr --output HDMI-1 --right-of DVI-I-1

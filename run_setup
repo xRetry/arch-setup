@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo ansible-playbook --ask-vault-pass arch_setup.yaml
