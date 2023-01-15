@@ -14,3 +14,24 @@
 - name: Install nvim plugins
   command: nvim -c "PackerSync" -c ":qa!"
 
+- name: Clone helix config repository
+  git:
+    repo: 'https://github.com/xRetry/helix.git'
+    dest: ~/.config/helix
+
+- name: Create directories for config files
+  file:
+    path: "{{ item.path }}"
+    state: directory
+  loop:
+    - { path: "~/.config/tmux" }
+    - { path: "~/.config/alacritty" }
+  
+- name: Copy config files to destination
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  loop:
+    - { src: "files/tmux.conf", dest: "~/.config/tmux/tmux.conf" }
+    - { src: "files/alacritty.yml", dest: "~/.config/alacritty/alacritty.yml" }
+

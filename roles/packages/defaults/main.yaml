@@ -25,14 +25,21 @@ packages_utils:
   - alsa-utils
   - pulseaudio
   - pavucontrol
+  - helix
 
 packages_dev:
   - python
   - python-pip
   - python-setuptools
+  - pyright
+  - go
+  - gopls
+  - rust
+  - rust-analyzer
   - gcc
   - npm
-  - julia
   - docker
   - texlive-core
   - texlive-latexextra
+  - texlab
+
