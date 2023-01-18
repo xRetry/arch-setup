@@ -28,3 +28,5 @@
   loop:
     - { src: ".bash_profile.j2", dest: "~/.bash_profile" }
     - { src: ".bashrc.j2", dest: "~/.bashrc" }
+    - { src: ".gitconfig.j2", dest: "~/.gitconfig" }
+    - { src: ".git-credentials.j2", dest: "~/.git-credentials" }
