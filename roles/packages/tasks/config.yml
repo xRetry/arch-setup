@@ -35,3 +35,9 @@
     - { src: "files/tmux.conf", dest: "~/.config/tmux/tmux.conf" }
     - { src: "files/alacritty.yml", dest: "~/.config/alacritty/alacritty.yml" }
 
+- name: Start and enable network manager
+  service:
+    name: NetworkManager
+    state: started
+    enabled: yes
+

@@ -13,6 +13,7 @@ packages_utils:
   - wget
   - tar
   - gzip
+  - networkmanager
   - nm-connection-editor
   - nnn
   - neovim
