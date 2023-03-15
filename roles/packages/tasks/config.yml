@@ -40,3 +40,10 @@
     dest: "{{ item.dest }}"
   loop:
     - { src: "alacritty.j2", dest: "~/.config/alacritty/alacritty.yml" }
+
+- name: Start and enable network manager
+  service:
+    name: NetworkManager
+    state: started
+    enabled: yes
+
