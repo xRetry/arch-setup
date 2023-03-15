@@ -33,5 +33,10 @@
     dest: "{{ item.dest }}"
   loop:
     - { src: "files/tmux.conf", dest: "~/.config/tmux/tmux.conf" }
-    - { src: "files/alacritty.yml", dest: "~/.config/alacritty/alacritty.yml" }
 
+- name: Copy config templates to destination
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  loop:
+    - { src: "alacritty.j2", dest: "~/.config/alacritty/alacritty.yml" }

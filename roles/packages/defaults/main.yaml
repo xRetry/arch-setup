@@ -1,5 +1,7 @@
 ---
 
+term_font_size: "{{ 8 if config_id == 1 else 11 }}"
+
 packages_utils:
   - sudo
   - man-db
