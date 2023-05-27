@@ -42,6 +42,8 @@
     - { src: "alacritty.j2", dest: "~/.config/alacritty/alacritty.yml" }
 
 - name: Start and enable network manager
+  become: true
+  become_user: root
   service:
     name: NetworkManager
     state: started
