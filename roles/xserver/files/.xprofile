@@ -15,3 +15,6 @@ xset r rate 250 30
 
 # Set correct screen placement
 [[ $CONFIG_ID -eq 2 ]] && xrandr --output DP-3 --left-of DVI-I-1 && xrandr --output HDMI-1 --right-of DVI-I-1
+
+# Enable touchpad tap
+[[ $CONFIG_ID -eq 1 ]] && xinput set-prop "ELAN072B:00 04F3:31BF Touchpad" 298 1 && xinput set-prop "ELAN072B:00 04F3:31BF Touchpad" 286 0.5

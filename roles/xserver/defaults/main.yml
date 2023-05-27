@@ -6,4 +6,5 @@ packages_xorg:
   - xorg-xrdb
   - xorg-xprop
   - xorg-xinit
+  - xorg-xinput
 
