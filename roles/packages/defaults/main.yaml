@@ -13,6 +13,7 @@ packages_utils:
   - unzip
   - curl
   - wget
+  - xsel
   - tar
   - gzip
   - networkmanager
