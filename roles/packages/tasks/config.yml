@@ -26,6 +26,7 @@
   loop:
     - { path: "~/.config/tmux" }
     - { path: "~/.config/alacritty" }
+    - { path: "~/.config/zellij" }
   
 - name: Copy config files to destination
   copy:
@@ -33,6 +34,7 @@
     dest: "{{ item.dest }}"
   loop:
     - { src: "files/tmux.conf", dest: "~/.config/tmux/tmux.conf" }
+    - { src: "files/config.kdl", dest: "~/.config/zellij/config.kdl" }
 
 - name: Copy config templates to destination
   template:
