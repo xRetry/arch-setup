@@ -13,13 +13,16 @@ packages_utils:
   - unzip
   - curl
   - wget
+  - xsel
   - tar
   - gzip
   - networkmanager
   - nm-connection-editor
   - nnn
   - neovim
+  - wezterm
   - tmux
+  - zellij
   - zathura
   - zathura-pdf-mupdf
   - ttf-hack-nerd

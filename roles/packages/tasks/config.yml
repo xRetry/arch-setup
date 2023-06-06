@@ -1,23 +1,16 @@
 ---
 
-- name: Clone nvim config repository
+- name: Clone config repositories
   git:
-    repo: 'https://github.com/xRetry/nvim.git'
-    dest: ~/.config/nvim
-
-- name: Clone packer for nvim
-  git:
-    repo: 'https://github.com/wbthomason/packer.nvim'
-    dest: ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-    depth: 1
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+  loop:
+    - { repo: 'https://github.com/xRetry/nvim.git', dest: ~/.config/nvim }
+    - { repo: 'https://github.com/xRetry/helix.git', dest: ~/.config/helix }
+    - { repo: 'https://github.com/xRetry/wezterm.git', dest: ~/.config/wezterm }
 
 - name: Install nvim plugins
-  command: nvim -c "PackerSync" -c ":qa!"
-
-- name: Clone helix config repository
-  git:
-    repo: 'https://github.com/xRetry/helix.git'
-    dest: ~/.config/helix
+  command: nvim --headless +'Lazy sync' +'sleep 20' +qall
 
 - name: Create directories for config files
   file:
@@ -26,6 +19,7 @@
   loop:
     - { path: "~/.config/tmux" }
     - { path: "~/.config/alacritty" }
+    - { path: "~/.config/zellij" }
   
 - name: Copy config files to destination
   copy:
@@ -33,6 +27,7 @@
     dest: "{{ item.dest }}"
   loop:
     - { src: "files/tmux.conf", dest: "~/.config/tmux/tmux.conf" }
+    - { src: "files/config.kdl", dest: "~/.config/zellij/config.kdl" }
 
 - name: Copy config templates to destination
   template:
@@ -42,6 +37,8 @@
     - { src: "alacritty.j2", dest: "~/.config/alacritty/alacritty.yml" }
 
 - name: Start and enable network manager
+  become: true
+  become_user: root
   service:
     name: NetworkManager
     state: started
