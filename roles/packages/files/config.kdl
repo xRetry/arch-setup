@@ -16,6 +16,8 @@ ui {
 
 keybinds clear-defaults=true {
     normal {
+        bind "Alt ," { GoToPreviousTab; }
+        bind "Alt ." { GoToNextTab; }
     }
     locked {
         bind "Alt g" { SwitchToMode "Normal"; }
